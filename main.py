@@ -17,9 +17,14 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    # return {"message": "You are in the root"}
-    # return {"message": "You are at home"}
-    return {"message": "You are at the right place"}
+    # return {"message": "Hello mate, you are in the root"}
+    # return {"message": "Hello mate, you are at home"}
+    return {"message": "Hello mate, you are at the right place"}
+
+
+@app.get("/hello/{name}")
+async def say_hello(name: str):
+    return {"message": f"Hello {name}"}
 
 
 @app.get("/item/{item_id}")

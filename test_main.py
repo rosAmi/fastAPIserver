@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "You are in the root"}
+    assert response.json() == {"message": "Hello mate, you are at the right place"}
 
 
 def test_read_item():

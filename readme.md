@@ -6,9 +6,11 @@ Installation:
 # pip install fastapi  + # pip install "uvicorn[standard]"
 # or
 # pip install fastapi + # pip install uvicorn
+# For testing: pip install pytest ,, pip install requests  
 
-Run:
-run server: $ uvicorn main:app --reload
+Run server: $ uvicorn main:app --reload
+
+Run Test: $ pytest
 
 open localhost:
 url: http://127.0.0.1:8000
