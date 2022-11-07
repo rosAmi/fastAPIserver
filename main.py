@@ -47,16 +47,17 @@ async def get_model(predict_type: ModelName):
 
 
 @app.get("/timeout")
-async def read_item(wait_sec: int):
-    time.sleep(120)
-    return {"message": "Success"}
+async def read_item():
+    time.sleep(20)
+    return {"message": "Success - 20sec timeout"}
 
 
 @app.get("/timeout/{wait_sec}")
 async def read_item(wait_sec: int):
     time.sleep(wait_sec)
-    return {"message": "Success"}
+    return {"message": "Success " + str(wait_sec) + "sec wait"}
 
+# see also readme.md
 # pip install "fastapi[all]"
 # or
 # pip install fastapi  + # pip install "uvicorn[standard]"
